@@ -29,15 +29,8 @@
           <li class="nav-item">
             <a
               href="#home"
-              class="nav-link"
+              class="nav-link active"
               >Home</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              href="#about"
-              class="nav-link"
-              >About</a
             >
           </li>
           <li class="nav-item">
@@ -47,12 +40,28 @@
               >Services</a
             >
           </li>
-          <li class="nav-item">
+          <li class="nav-item dropdown">
             <a
-              href="#portfolio"
-              class="nav-link"
-              >Portfolio</a
+              href="#about"
+              class="nav-link dropdown-toggle"
+              >About</a
             >
+            <ul class="dropdown-menu">
+              <li>
+                <a
+                  href="#about-me"
+                  class="dropdown-link"
+                  >About Me</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#about-fimmpro"
+                  class="dropdown-link"
+                  >About Fimmpro</a
+                >
+              </li>
+            </ul>
           </li>
           <li class="nav-item">
             <a
@@ -70,31 +79,38 @@
       </div>
     </nav>
 
+    <!-- Banner Section -->
+    <section class="banner">
+      <div class="banner-container">
+        <div class="banner-triangle"></div>
+        <div class="banner-content">
+          <h1 class="banner-title">fimmpro</h1>
+          <p class="banner-subtitle">
+            Your data-driven partner in solving Finland's labour market
+          </p>
+        </div>
+      </div>
+    </section>
+
     <!-- Hero Section -->
     <section
       id="home"
       class="hero">
       <div class="hero-container">
         <div class="hero-content">
-          <h1 class="hero-title">Welcome to Fimmpro</h1>
-          <p class="hero-subtitle">
-            Professional solutions for modern businesses
-          </p>
-          <p class="hero-description">
-            We specialize in delivering innovative solutions that drive growth
-            and success for our clients. Our expertise spans across multiple
-            industries, ensuring comprehensive support for your business needs.
-          </p>
+          <div class="hero-conditions">
+            <p class="hero-description">If you:</p>
+            <ul class="condition-list">
+              <li>Are hiring / recruiting</li>
+              <li>Want to internationalise talent pool</li>
+              <li>Provide services for job seekers</li>
+            </ul>
+          </div>
           <div class="hero-buttons">
             <a
-              href="#services"
-              class="btn btn-primary"
-              >Our Services</a
-            >
-            <a
               href="#contact"
-              class="btn btn-secondary"
-              >Get in Touch</a
+              class="btn btn-primary"
+              >Contact</a
             >
           </div>
         </div>
@@ -112,33 +128,87 @@
       class="about">
       <div class="container">
         <div class="section-header">
-          <h2>About Fimmpro</h2>
-          <p>Your trusted partner in business excellence</p>
+          <h2>About</h2>
+          <p>Learn more about us and our mission</p>
         </div>
         <div class="about-content">
-          <div class="about-text">
-            <h3>Who We Are</h3>
-            <p>
-              Fimmpro is a leading professional services company dedicated to
-              helping businesses achieve their goals through innovative
-              solutions and strategic partnerships. With years of experience and
-              a commitment to excellence, we deliver results that matter.
-            </p>
-            <div class="features">
-              <div class="feature">
-                <i class="fas fa-chart-line"></i>
-                <h4>Growth Focused</h4>
-                <p>Strategies designed to accelerate your business growth</p>
+          <!-- About Me Section -->
+          <div
+            id="about-me"
+            class="about-subsection">
+            <h3>About Me</h3>
+            <div class="about-me-content">
+              <div class="about-me-text">
+                <p>
+                  I am a passionate professional with extensive experience in
+                  delivering innovative solutions that drive business growth and
+                  success. With a strong background in technology and business
+                  strategy, I specialize in helping companies achieve their
+                  goals through creative problem-solving and strategic
+                  partnerships.
+                </p>
+                <p>
+                  My approach combines technical expertise with business acumen,
+                  ensuring that every solution not only meets technical
+                  requirements but also aligns with business objectives and
+                  delivers measurable results.
+                </p>
+                <div class="personal-info">
+                  <div class="info-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Advanced degree in Computer Science</span>
+                  </div>
+                  <div class="info-item">
+                    <i class="fas fa-briefcase"></i>
+                    <span>10+ years of industry experience</span>
+                  </div>
+                  <div class="info-item">
+                    <i class="fas fa-award"></i>
+                    <span>Certified in multiple technologies</span>
+                  </div>
+                </div>
               </div>
-              <div class="feature">
-                <i class="fas fa-users"></i>
-                <h4>Expert Team</h4>
-                <p>Experienced professionals committed to your success</p>
-              </div>
-              <div class="feature">
-                <i class="fas fa-lightbulb"></i>
-                <h4>Innovation</h4>
-                <p>Cutting-edge solutions for modern challenges</p>
+            </div>
+          </div>
+
+          <!-- About Fimmpro Section -->
+          <div
+            id="about-fimmpro"
+            class="about-subsection">
+            <h3>About Fimmpro</h3>
+            <div class="about-fimmpro-content">
+              <div class="about-fimmpro-text">
+                <p>
+                  Fimmpro is a leading professional services company dedicated
+                  to helping businesses achieve their goals through innovative
+                  solutions and strategic partnerships. With years of experience
+                  and a commitment to excellence, we deliver results that
+                  matter.
+                </p>
+                <p>
+                  Our mission is to empower businesses with cutting-edge
+                  technology solutions that drive growth, improve efficiency,
+                  and create competitive advantages in today's dynamic market.
+                </p>
+                <div class="features">
+                  <div class="feature">
+                    <i class="fas fa-chart-line"></i>
+                    <h4>Growth Focused</h4>
+                    <p>
+                      Strategies designed to accelerate your business growth
+                    </p>
+                  </div>
+                  <div class="feature">
+                    <i class="fas fa-users"></i>
+                    <h4>Expert Team</h4>
+                    <p>Experienced professionals committed to your success</p>
+                  </div>
+                  <div class="feature">
+                    <i class="fas fa-lightbulb"></i>
+                    <h4>Innovation</h4>
+                    <p>Cutting-edge solutions for modern challenges</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

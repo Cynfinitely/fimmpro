@@ -8,14 +8,14 @@ hamburger.addEventListener("click", () => {
 });
 
 // Close mobile menu when clicking on a link
-document.querySelectorAll(".nav-link").forEach((n) =>
+document.querySelectorAll(".nav-link, .dropdown-link").forEach((n) =>
   n.addEventListener("click", () => {
     hamburger.classList.remove("active");
     navMenu.classList.remove("active");
   })
 );
 
-// Navbar background change on scroll
+// Navbar background change on scroll and active navigation highlighting
 window.addEventListener("scroll", () => {
   const navbar = document.querySelector(".navbar");
   if (window.scrollY > 100) {
@@ -25,7 +25,38 @@ window.addEventListener("scroll", () => {
     navbar.style.background = "rgba(255, 255, 255, 0.95)";
     navbar.style.boxShadow = "none";
   }
+
+  // Update active navigation based on scroll position
+  updateActiveNavigation();
 });
+
+// Function to update active navigation
+function updateActiveNavigation() {
+  const sections = document.querySelectorAll("section[id], div[id]");
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  let current = "";
+  const scrollPosition = window.scrollY + 100;
+
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight;
+
+    if (
+      scrollPosition >= sectionTop &&
+      scrollPosition < sectionTop + sectionHeight
+    ) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach((link) => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === `#${current}`) {
+      link.classList.add("active");
+    }
+  });
+}
 
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -37,6 +68,20 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         behavior: "smooth",
         block: "start",
       });
+
+      // Update active navigation immediately
+      const navLinks = document.querySelectorAll(".nav-link");
+      navLinks.forEach((link) => link.classList.remove("active"));
+
+      // Handle dropdown links - set the parent About link as active
+      if (this.classList.contains("dropdown-link")) {
+        const aboutLink = document.querySelector('a[href="#about"]');
+        if (aboutLink) {
+          aboutLink.classList.add("active");
+        }
+      } else {
+        this.classList.add("active");
+      }
     }
   });
 });
