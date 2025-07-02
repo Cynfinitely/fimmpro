@@ -229,10 +229,14 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+}
+
+.hero-main {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
+  margin-bottom: 4rem;
 }
 
 .hero-content {
@@ -243,9 +247,38 @@ body {
   max-width: 600px;
 }
 
-.hero-conditions {
-  margin-bottom: 3rem;
-  width: 100%;
+.hero-additional {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  margin-top: 4rem;
+}
+
+.hero-subtitle {
+  display: inline-block;
+  background-color: #1f6d5c;
+  color: white;
+  padding: 0.5rem 2rem;
+  border-radius: 4px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  min-width: 200px;
+  text-align: right;
+  padding-right: 3rem;
+}
+
+.hero-text {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  text-align: justify;
+  max-width: 800px;
+}
+
+.hero-section {
+  margin-bottom: 2rem;
 }
 
 .hero-title {
@@ -789,13 +822,8 @@ body {
     text-align: center;
   }
 
-  .hero {
-    padding: 6rem 0 4rem;
-  }
-
-  .hero-container {
+  .hero-main {
     grid-template-columns: 1fr;
-    gap: 3rem;
     text-align: center;
   }
 
@@ -804,22 +832,18 @@ body {
     max-width: 100%;
   }
 
-  .hero-conditions {
-    margin-bottom: 2rem;
+  .hero-subtitle {
+    font-size: 1.2rem;
+    padding: 0.4rem 1.5rem;
   }
 
-  .condition-list li {
-    font-size: 1.2rem;
+  .hero-text {
+    font-size: 1rem;
     text-align: left;
   }
 
   .hero-image {
-    justify-content: center;
     order: -1;
-  }
-
-  .hero-image img {
-    max-width: 80%;
   }
 
   .hero-title {
@@ -1035,4 +1059,30 @@ html {
     opacity: 1;
     margin-left: 10px;
   }
+}
+
+.hero-separator {
+  width: 100%;
+  height: 100px;
+  background-color: #1f6d5c;
+  margin: 4rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-separator::before,
+.hero-separator::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.hero-separator::before {
+  top: 15px;
+}
+
+.hero-separator::after {
+  bottom: 15px;
 }
