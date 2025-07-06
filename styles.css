@@ -804,6 +804,26 @@ body {
   min-height: 120px;
 }
 
+.contact-form select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  background-color: white;
+  color: #333;
+}
+
+.contact-form select:focus {
+  outline: none;
+  border-color: #000;
+}
+
+.contact-form select option {
+  padding: 10px;
+}
+
 /* Footer */
 .footer {
   background-color: #1f6d5c;
